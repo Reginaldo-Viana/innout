@@ -44,7 +44,7 @@
                 <span class="main text-danger">
                     18:00
                 </span>
-                <span class="label text-muted">Hora de Saíde</span>
+                <span class="label text-muted">Hora de Saída</span>
             </div>
         </div>
     </div>
