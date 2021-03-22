@@ -55,7 +55,7 @@ class Model {
     }
 
     public function save() {
-        $sql = "INSERT INTO" . static::$tableName . " ("
+        $sql = "INSERT INTO " . static::$tableName . " ("
             . implode(",", static::$columns) . ") VALUES (";
         foreach(static::$columns as $col) {
             $sql .= static::getFormatedValue($this->$col) . ",";
@@ -70,7 +70,7 @@ class Model {
         if(count($filters) > 0){
             $sql .= " WHERE 1 = 1";
             foreach($filters as $column => $value){
-                $sql .= " AND ${column} =" .static::getFormatedValue($value);
+                $sql .= " AND ${column} = " .static::getFormatedValue($value);
             }
         }
         return $sql;
