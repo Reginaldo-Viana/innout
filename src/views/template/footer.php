@@ -1,5 +1,5 @@
 <footer class="footer">
-    <span>Desenvolvido por <span class="text-primary">Reginaldo Viana</span\></span>
+    <span class="text-white ">DEV: <span class= " text-primary ">(Reginaldo Viana)</span></span\>
 </footer>
 <script src="assets/js/app.js"></script>
 </body>
