@@ -1,3 +1,4 @@
 {
-    "intelephense.telemetry.enabled": false
+    "intelephense.telemetry.enabled": false,
+    "files.autoSave": "afterDelay"
 }
