@@ -117,7 +117,7 @@ aside.sidebar {
 }
 
 aside.sidebar .menu {
-    width: 100%;
+    width: 120%;
     flex-grow: 1;
 }
 
