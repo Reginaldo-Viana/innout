@@ -106,6 +106,13 @@ class WorkingHours extends Model {
         return "{$sign}{$balanceString}";
     }
 
+    public static function getAbsentUser() {
+        $today = new DateTime();
+        $result = Database::getResultFromQuery("
+        
+        ");
+    }
+
     public static function getMonthlyReport($userId, $date) {
         $registries = [];
         $startDate = getFirstDayOfMonth($date)->format('Y-m-d');
