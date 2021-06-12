@@ -3,7 +3,7 @@ session_start();
 requireValidSession();
 
 $activeUsersCount = User::getActiveUsersCount();
-$absentUsers = WorkingHours::getAbsentUser();
+$absentUsers = WorkingHours::getAbsentUsers();
 
 $yearAndMonth = (new DateTime())->format('Y-m');
 $seconds = WorkingHours::getWorkedTimeInMonth($yearAndMonth);
