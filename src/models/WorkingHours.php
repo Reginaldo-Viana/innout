@@ -23,6 +23,7 @@ class WorkingHours extends Model {
                 'worked_time' => 0
             ]);
         }
+
         return $registry;
     }
 
@@ -38,7 +39,7 @@ class WorkingHours extends Model {
         $nextTime = $this->getNextTime();
         if($nextTime === 'time1' || $nextTime === 'time3') {
             return 'exitTime';
-        } elseif($nextTime === 'time2' || $nextTime === 'time4'){
+        } elseif($nextTime === 'time2' || $nextTime === 'time4') {
             return 'workedInterval';
         } else {
             return null;
@@ -61,13 +62,14 @@ class WorkingHours extends Model {
 
     function getWorkedInterval() {
         [$t1, $t2, $t3, $t4] = $this->getTimes();
+
         $part1 = new DateInterval('PT0S');
         $part2 = new DateInterval('PT0S');
 
-        if ($t1) $part1 = $t1->diff(new DateTime());
-        if ($t2) $part1 = $t1->diff($t2);
-        if ($t3) $part2 = $t3->diff(new DateTime());
-        if ($t4) $part2 = $t3->diff($t4);
+        if($t1) $part1 = $t1->diff(new DateTime());
+        if($t2) $part1 = $t1->diff($t2);
+        if($t3) $part2 = $t3->diff(new DateTime());
+        if($t4) $part2 = $t3->diff($t4);
 
         return sumIntervals($part1, $part2);
     }
@@ -83,7 +85,7 @@ class WorkingHours extends Model {
     }
 
     function getExitTime() {
-        [$t1,,,$t4] = $this->getTimes();
+        [$t1,,, $t4] = $this->getTimes();
         $workday = DateInterval::createFromDateString('8 hours');
 
         if(!$t1) {
@@ -152,7 +154,7 @@ class WorkingHours extends Model {
                 $registries[$row['work_date']] = new WorkingHours($row);
             }
         }
-
+        
         return $registries;
     }
 
