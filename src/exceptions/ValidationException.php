@@ -15,7 +15,7 @@ class ValidationException extends AppException {
         return $this->errors;
     }
 
-    public function get($att){
+    public function get($att) {
         return $this->errors[$att];
     }
 }
