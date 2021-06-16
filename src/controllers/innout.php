@@ -8,13 +8,14 @@ $records = WorkingHours::loadFromUserAndDate($user->id, date('Y-m-d'));
 try {
     $currentTime = strftime('%H:%M:%S', time());
 
-    if($_POST['forcedTime']){
+    if($_POST['forcedTime']) {
         $currentTime = $_POST['forcedTime'];
     }
+
     $records->innout($currentTime);
-    AddSuccessMsg('Ponto inserido com sucesso!');
+    addSuccessMsg('Ponto inserido com sucesso!');
 } catch(AppException $e) {
-    AddErrorMsg($e->getMessage());
+    addErrorMsg($e->getMessage());
 }
 
 header('Location: day_records.php');

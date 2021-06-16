@@ -13,6 +13,7 @@ function loadView($viewName, $params = array()) {
             }
         }
     }
+
     require_once(VIEW_PATH . "/{$viewName}.php");
 }
 
@@ -31,7 +32,7 @@ function loadTemplateView($viewName, $params = array()) {
     $workedInterval = $workingHours->getWorkedInterval()->format('%H:%I:%S');
     $exitTime = $workingHours->getExitTime()->format('H:i:s');
     $activeClock = $workingHours->getActiveClock();
-    
+
     require_once(TEMPLATE_PATH . "/header.php");
     require_once(TEMPLATE_PATH . "/left.php");
     require_once(VIEW_PATH . "/{$viewName}.php");

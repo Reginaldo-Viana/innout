@@ -17,7 +17,7 @@ function isBefore($date1, $date2) {
 
 function getNextDay($date) {
     $inputDate = getDateAsDateTime($date);
-    $inputDate->modify("+1 day");
+    $inputDate->modify('+1 day');
     return $inputDate;
 }
 
@@ -47,6 +47,7 @@ function getFirstDayOfMonth($date) {
     $time = getDateAsDateTime($date)->getTimestamp();
     return new DateTime(date('Y-m-1', $time));
 }
+
 function getLastDayOfMonth($date) {
     $time = getDateAsDateTime($date)->getTimestamp();
     return new DateTime(date('Y-m-t', $time));

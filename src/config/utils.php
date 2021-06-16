@@ -1,6 +1,6 @@
 <?php
 
-function AddSuccessMsg($msg) {
+function addSuccessMsg($msg) {
     $_SESSION['message'] = [
         'type' => 'success',
         'message' => $msg
